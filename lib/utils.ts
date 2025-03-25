@@ -15,3 +15,18 @@ export function formatNumberWithDecimal(num: number): string {
   const [int, decimal] = num.toString().split(".");
   return decimal ? `${int}.${decimal.padEnd(2, "0")}` : `${int}.00`;
 }
+
+// Format errors
+export function formatError(error: any) {
+  if (error.name === "ZodError") {
+    n;
+    const fieldErrors = Object.keys(error.errors).map(
+      (field) => error.errors[field].message
+    );
+  } else if (
+    error.name === "PrismaClientKnownRequestError" &&
+    error.code === "P2002"
+  ) {
+  } else {
+  }
+}
